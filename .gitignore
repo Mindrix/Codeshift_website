@@ -13,3 +13,6 @@ Thumbs.db
 # Ignore environment files
 .env
 .env.*
+# Ignore Python compiled files
+*.pyc
+__pycache__/
