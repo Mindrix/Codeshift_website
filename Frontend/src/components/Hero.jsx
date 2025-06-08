@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "./Hero.module.css";
 
 const Hero = () => {
   return (
@@ -15,16 +16,16 @@ const Hero = () => {
       </div>
       {/* Right Column: 2x2 Grid */}
       <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-5 w-full max-w-xs aspect-square">
-        <div className="bg-orange-500 rounded-xl flex items-center justify-center aspect-square text-5xl shadow-md">
+        <div className={`${styles.btn} bg-orange-500 rounded-xl flex items-center justify-center aspect-square text-5xl shadow-md`}>
           <span role="img" aria-label="Lightning">⚡</span>
         </div>
-        <div className="bg-pink-600 rounded-xl flex items-center justify-center aspect-square text-5xl shadow-md">
+        <div className={`${styles.btn} bg-pink-600 rounded-xl flex items-center justify-center aspect-square text-5xl shadow-md`}>
           <span role="img" aria-label="Rocket">🚀</span>
         </div>
-        <div className="bg-green-500 rounded-xl flex items-center justify-center aspect-square text-5xl shadow-md">
+        <div className={` ${styles.btn} bg-green-500 rounded-xl flex items-center justify-center aspect-square text-5xl shadow-md `} >
           <span role="img" aria-label="Robot">🤖</span>
         </div>
-        <div className="bg-blue-600 rounded-xl flex items-center justify-center aspect-square text-5xl shadow-md">
+        <div className={`${styles.btn} bg-blue-600 rounded-xl flex items-center justify-center aspect-square text-5xl shadow-md `} >
           <span role="img" aria-label="Code">💻</span>
         </div>
       </div>
