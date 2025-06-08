@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/illustrations/Logo.png';
 import axios from 'axios';
+import styles from "./Navbar.module.css"
 
 const Navbar = () => {
     const [showLogin, setShowLogin] = useState(false);
@@ -75,8 +76,8 @@ const Navbar = () => {
         <>
             <nav className="bg-black text-white px-8 py-6 flex items-center w-full justify-between">
                 <span className="flex items-center gap-3">
-                    <img src={logo} alt="CodeShiftAI Logo" className="w-20 h-20 object-contain" />
-                    <span className="text-2xl font-extrabold">CodeShiftAI</span>
+                    <img src={logo} alt="CodeShiftAI Logo" className={`${styles.nav} w-20 h-20 object-contain`} />
+                    <span className={`${styles.nav} text-2xl font-extrabold`}>CodeShiftAI</span>
                 </span>
                 <div className="flex gap-3">
                     <a href="#docs" className="px-5 py-2 rounded-full border border-gray-700 text-white font-medium bg-transparent hover:bg-gray-900 transition text-sm">Docs</a>
