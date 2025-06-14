@@ -14,10 +14,8 @@ const Navbar = () => {
 
     const handleLogin = () => {
         setShowLogin(true);
-    };
-
-    const handleTryFree = () => {
-        alert('Try it for Free button clicked!');
+    };    const handleTryFree = () => {
+        navigate('/signup');
     };
 
     const handleCloseLogin = () => {
@@ -84,7 +82,7 @@ const Navbar = () => {
                     <button onClick={() => navigate('/about')} className="px-5 py-2 rounded-full border border-gray-700 text-white font-medium bg-transparent hover:bg-gray-900 transition text-sm">About</button>
                     <button onClick={() => navigate('/pricing')} className="px-5 py-2 rounded-full border border-gray-700 text-white font-medium bg-transparent hover:bg-gray-900 transition text-sm">Pricing</button>
                     {!isLoggedIn && <button onClick={handleLogin} className="px-5 py-2 rounded-md bg-white text-black font-semibold shadow-sm hover:bg-gray-200 transition text-sm">Login</button>}
-                    <button onClick={handleTryFree} className="px-5 py-2 rounded-md bg-gray-800 text-white font-semibold shadow-sm hover:bg-gray-700 transition text-sm border border-gray-700">Try it for Free</button>
+                    <button onClick={handleTryFree} className="px-5 py-2 rounded-md bg-gray-800 text-white font-semibold shadow-sm hover:bg-gray-700 transition text-sm border border-gray-700">Try it for free</button>
                 </div>
             </nav>
             {showLogin && (
