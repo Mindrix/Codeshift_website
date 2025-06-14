@@ -1,120 +1,136 @@
-<<<<<<< HEAD:Frontend/src/pages/Pricing.jsx
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-
-const Pricing = () => {
-  const [plans, setPlans] = useState([]);
-
-  useEffect(() => {
-    const fetchPricingPlans = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/api/pricing/');
-        setPlans(response.data);
-      } catch (error) {
-        console.error('Error fetching pricing plans:', error);
-      }
-    };
-
-    fetchPricingPlans();
-  }, []);
-
-  return (
-    <div className="bg-gray-900 min-h-screen py-10 text-white">
-      <h1 className="text-4xl font-bold text-center mb-10 text-blue-400">Pricing Plans</h1>
-      <div className="flex justify-center gap-10">
-        <div className="bg-gray-800 shadow-md rounded-lg p-6 w-80">
-          <h2 className="text-2xl font-bold mb-4 text-blue-300">Basic Plan</h2>
-          <p className="text-gray-400 mb-4">Perfect for individuals starting out.</p>
-          <p className="text-3xl font-bold mb-4 text-blue-400">$10/month</p>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Choose Plan</button>
-        </div>
-        <div className="bg-gray-800 shadow-md rounded-lg p-6 w-80">
-          <h2 className="text-2xl font-bold mb-4 text-blue-300">Pro Plan</h2>
-          <p className="text-gray-400 mb-4">Ideal for professionals and teams.</p>
-          <p className="text-3xl font-bold mb-4 text-blue-400">$30/month</p>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Choose Plan</button>
-        </div>
-        <div className="bg-gray-800 shadow-md rounded-lg p-6 w-80">
-          <h2 className="text-2xl font-bold mb-4 text-blue-300">Enterprise Plan</h2>
-          <p className="text-gray-400 mb-4">Best for large organizations.</p>
-          <p className="text-3xl font-bold mb-4 text-blue-400">$100/month</p>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Choose Plan</button>
-=======
 import React from 'react';
+import logo from '../assets/illustrations/Logo.png';
 
 const Pricing = () => {
+  const plans = [
+    {
+      id: 1,
+      name: 'Free',
+      price: '$0',
+      duration: 'forever',
+      features: [
+        'Basic code suggestions',
+        'Up to 10 requests per day',
+        'Community support',
+        'Basic templates'
+      ],
+      isPopular: false,
+      buttonText: 'Get Started',
+      buttonColor: 'bg-gray-800 text-white hover:bg-gray-700'
+    },
+    {
+      id: 2,
+      name: 'Pro',
+      price: '$19',
+      duration: 'per month',
+      features: [
+        'Advanced code generation',
+        'Unlimited requests',
+        'Priority support',
+        'Custom templates',
+        'Bug fixing assistance',
+        'Project scaffolding'
+      ],
+      isPopular: true,
+      buttonText: 'Try it for free',
+      buttonColor: 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700'
+    },
+    {
+      id: 3,
+      name: 'Enterprise',
+      price: '$99',
+      duration: 'per month',
+      features: [
+        'Everything in Pro',
+        'Team collaboration',
+        'Custom integrations',
+        'Dedicated support',
+        'Advanced analytics',
+        'White-label options'
+      ],
+      isPopular: false,
+      buttonText: 'Contact Us',
+      buttonColor: 'bg-green-600 text-white hover:bg-green-700'
+    }
+  ];
+
   return (
-    <div className="bg-black min-h-screen py-8 sm:py-10 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10 text-blue-400">Pricing Plans</h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto">
-          {/* Basic Plan */}
-          <div className="bg-gray-800 shadow-md rounded-lg p-6 sm:p-8 w-full">
-            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-blue-300">Basic Plan</h2>
-            <p className="text-gray-400 mb-4">Perfect for individuals starting out.</p>
-            <p className="text-2xl sm:text-3xl font-bold mb-4 text-blue-400">$10/month</p>
-            <ul className="text-gray-300 mb-6 space-y-2">
-              <li>• Up to 100 AI requests per month</li>
-              <li>• Basic code generation</li>
-              <li>• Email support</li>
-              <li>• Access to community</li>
-            </ul>
-            <button className="w-full bg-blue-500 text-white px-4 py-3 rounded hover:bg-blue-600 transition font-semibold">Choose Plan</button>
-          </div>
-          
-          {/* Pro Plan */}
-          <div className="bg-gray-800 shadow-md rounded-lg p-6 sm:p-8 w-full border-2 border-blue-500 relative">
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-              Most Popular
-            </div>
-            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-blue-300">Pro Plan</h2>
-            <p className="text-gray-400 mb-4">Ideal for professionals and teams.</p>
-            <p className="text-2xl sm:text-3xl font-bold mb-4 text-blue-400">$30/month</p>
-            <ul className="text-gray-300 mb-6 space-y-2">
-              <li>• Unlimited AI requests</li>
-              <li>• Advanced code generation</li>
-              <li>• Priority support</li>
-              <li>• Custom templates</li>
-              <li>• Team collaboration</li>
-            </ul>
-            <button className="w-full bg-blue-500 text-white px-4 py-3 rounded hover:bg-blue-600 transition font-semibold">Choose Plan</button>
-          </div>
-          
-          {/* Enterprise Plan */}
-          <div className="bg-gray-800 shadow-md rounded-lg p-6 sm:p-8 w-full md:col-span-2 lg:col-span-1">
-            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-blue-300">Enterprise Plan</h2>
-            <p className="text-gray-400 mb-4">Best for large organizations.</p>
-            <p className="text-2xl sm:text-3xl font-bold mb-4 text-blue-400">$100/month</p>
-            <ul className="text-gray-300 mb-6 space-y-2">
-              <li>• Everything in Pro</li>
-              <li>• Custom integrations</li>
-              <li>• Dedicated support</li>
-              <li>• On-premise deployment</li>
-              <li>• SLA guarantees</li>
-            </ul>
-            <button className="w-full bg-blue-500 text-white px-4 py-3 rounded hover:bg-blue-600 transition font-semibold">Contact Sales</button>
-          </div>
+    <div className="min-h-screen w-full bg-black text-white py-8 sm:py-12 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="w-full flex justify-start mb-4">
+          <span className="text-blue-400 text-sm sm:text-lg font-bold tracking-wide bg-gray-900 px-3 sm:px-4 py-2 rounded shadow border border-blue-400 ml-2 mt-2">PRICING</span>
         </div>
         
-        {/* FAQ Section */}
-        <div className="mt-16 max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-white">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2 text-blue-300">Can I change my plan anytime?</h3>
-              <p className="text-gray-300">Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
+        <header className="text-center mb-12 sm:mb-16">
+          <img src={logo} alt="CodeShiftAI Logo" className="w-20 h-20 sm:w-24 sm:h-24 object-contain mb-6 mx-auto" />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+            Choose Your <span className="text-blue-400">Coding</span> Plan
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+            From free experimentation to enterprise-grade solutions. Find the perfect plan for your coding needs.
+          </p>
+        </header>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+          {plans.map((plan) => (
+            <div
+              key={plan.id}
+              className={`relative bg-gray-900 rounded-xl p-6 sm:p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 ${
+                plan.isPopular ? 'border-blue-400 shadow-blue-400/20' : 'border-gray-700'
+              }`}
+            >
+              {plan.isPopular && (
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                    Most Popular
+                  </span>
+                </div>
+              )}
+              
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                <div className="mb-4">
+                  <span className="text-4xl sm:text-5xl font-extrabold">{plan.price}</span>
+                  <span className="text-gray-400 ml-2">/{plan.duration}</span>
+                </div>
+              </div>
+
+              <ul className="space-y-3 mb-8 text-gray-300">
+                {plan.features.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <svg className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-opacity-50 ${plan.buttonColor}`}>
+                {plan.buttonText}
+              </button>
             </div>
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2 text-blue-300">Is there a free trial?</h3>
-              <p className="text-gray-300">Yes, all plans come with a 14-day free trial. No credit card required.</p>
-            </div>
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2 text-blue-300">What payment methods do you accept?</h3>
-              <p className="text-gray-300">We accept all major credit cards, PayPal, and bank transfers for enterprise customers.</p>
-            </div>
-          </div>
->>>>>>> deep:src/pages/Pricing.jsx
+          ))}
+        </div>
+
+        <div className="text-center">
+          <p className="text-gray-400 text-lg mb-4">
+            Need something custom? We're here to help.
+          </p>
+          <button className="bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
+            Contact Sales
+          </button>
+        </div>
+
+        {/* Contact Us in bottom right */}
+        <div className="fixed bottom-2 right-4 z-50 flex flex-col items-end">
+          <div className="bg-black/80 text-gray-300 px-3 sm:px-4 py-2 rounded-t-lg shadow-lg font-bold text-sm sm:text-base min-w-40 sm:min-w-48 max-w-xs text-right leading-tight">Contact Us</div>
+          <a href="mailto:Mindrix25@gmail.com" className="bg-black/80 text-gray-400 px-3 sm:px-4 py-1 shadow-lg font-semibold hover:text-blue-400 transition text-xs sm:text-sm min-w-40 sm:min-w-48 max-w-xs text-right rounded-b-none whitespace-nowrap overflow-x-auto">
+            Mindrix25@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/company/mindrix1" target="_blank" rel="noopener noreferrer" className="bg-black/80 text-blue-400 px-3 sm:px-4 py-1 rounded-b-lg shadow-lg font-semibold hover:text-blue-300 transition text-xs sm:text-sm min-w-40 sm:min-w-48 max-w-xs text-right border-t border-gray-800 -mt-1 whitespace-nowrap overflow-x-auto">
+            LinkedIn: /mindrix1
+          </a>
         </div>
       </div>
     </div>
