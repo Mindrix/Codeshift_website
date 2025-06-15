@@ -1,7 +1,9 @@
 {
   "name": "codeshift-ui",
   "version": "0.1.0",
-  "private": true,  "dependencies": {
+  "private": true,
+  "homepage": "https://mindrix.github.io/codeshiftai_website",
+  "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -13,12 +15,13 @@
     "react-router-dom": "^7.6.2",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
+  },  "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +43,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "package": "^1.0.1",
     "postcss": "^8.5.4",
     "tailwindcss": "^3.4.17"
