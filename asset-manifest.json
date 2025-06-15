@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/codeshiftai_website/static/css/main.2376ec2e.css",
+    "main.js": "/codeshiftai_website/static/js/main.c0056ec5.js",
+    "static/media/Logo.png": "/codeshiftai_website/static/media/Logo.c50ce931b45f00dea3ab.png",
+    "index.html": "/codeshiftai_website/index.html",
+    "main.2376ec2e.css.map": "/codeshiftai_website/static/css/main.2376ec2e.css.map",
+    "main.c0056ec5.js.map": "/codeshiftai_website/static/js/main.c0056ec5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2376ec2e.css",
+    "static/js/main.c0056ec5.js"
+  ]
+}
