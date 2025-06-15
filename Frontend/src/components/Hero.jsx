@@ -31,10 +31,11 @@ const Hero = ({
         <p className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl leading-relaxed">
           Your all-in-one AI coding agent that turns simple prompts into fully functional code. Whether you're building components, fixing bugs, or scaffolding entire projects, it understands context, adapts to your style, and boosts your workflow.
         </p>
-        
-        {/* Dynamic CTA Button */}        
+          {/* Dynamic CTA Button */}        
         <a 
           href={buttonLink}
+          target={buttonLink.startsWith('http') ? '_blank' : '_self'}
+          rel={buttonLink.startsWith('http') ? 'noopener noreferrer' : undefined}
           className={`
             inline-flex items-center justify-center w-full sm:w-auto
             px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5

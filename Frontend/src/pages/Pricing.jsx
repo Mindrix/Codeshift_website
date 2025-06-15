@@ -2,6 +2,10 @@ import React from 'react';
 import logo from '../assets/illustrations/Logo.png';
 
 const Pricing = () => {
+  const handleTryFree = () => {
+    window.open('https://marketplace.visualstudio.com/items?itemName=Mindrix.codeshiftai', '_blank');
+  };
+
   const plans = [
     {
       id: 1,
@@ -104,9 +108,10 @@ const Pricing = () => {
                     <span>{feature}</span>
                   </li>
                 ))}
-              </ul>
-
-              <button className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-opacity-50 ${plan.buttonColor}`}>
+              </ul>              <button 
+                onClick={plan.buttonText === 'Try it for free' ? handleTryFree : undefined}
+                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-opacity-50 ${plan.buttonColor}`}
+              >
                 {plan.buttonText}
               </button>
             </div>

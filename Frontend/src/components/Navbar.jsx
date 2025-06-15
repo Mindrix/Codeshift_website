@@ -15,9 +15,8 @@ const Navbar = () => {
     const handleLogin = () => {
         setShowLogin(true);
     };
-    
-    const handleTryFree = () => {
-        navigate('/signup');
+      const handleTryFree = () => {
+        window.open('https://marketplace.visualstudio.com/items?itemName=Mindrix.codeshiftai', '_blank');
     };
 
     const handleCloseLogin = () => {
